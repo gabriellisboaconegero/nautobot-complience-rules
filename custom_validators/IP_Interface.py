@@ -26,7 +26,7 @@ class InterfaceToIP(DataComplianceRule):
     enforce = True # True/False enforce flag
 
     def audit_desired_ip_interface_assignment(self):
-        if self.context["object"].ip_addresses.count() > 1:
+        if self.context["object"].ip_addresses.count() >= 1:
             raise ComplianceError({
                 "ip_adresses": "IP interface must have only 1 interface assigned"
             })
