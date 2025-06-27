@@ -8,7 +8,7 @@ class IPToInterface(DataComplianceRule):
     def audit_desired_ip_interface_assignment(self):
         if self.context["object"].interfaces.count() > 1:
             raise ComplianceError({
-                "desired_attribute": "IP interface must have only 1 interface assigned"
+                "interfaces": "IP interface must have only 1 interface assigned"
             })
 
     def audit(self):
@@ -28,7 +28,7 @@ class InterfaceToIP(DataComplianceRule):
     def audit_desired_ip_interface_assignment(self):
         if self.context["object"].ip_addresses.count() > 1:
             raise ComplianceError({
-                "desired_attribute": "IP interface must have only 1 interface assigned"
+                "ip_adresses": "IP interface must have only 1 interface assigned"
             })
 
     def audit(self):
