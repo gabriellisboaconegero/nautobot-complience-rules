@@ -22,7 +22,7 @@ class IPToInterface(DataComplianceRule):
             raise ComplianceError(messages)
 
 class InterfaceToIP(DataComplianceRule):
-    model = "dim.device" # Ex: 'dcim.device'
+    model = "dcim.device" # Ex: 'dcim.device'
     enforce = True # True/False enforce flag
 
     def audit_desired_ip_interface_assignment(self):
